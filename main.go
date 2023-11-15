@@ -35,7 +35,7 @@ func calculerScoreMoyen(equipe *Equipe) {
 		total += score
 	}
 
-	equipe.ScoreMoyen = float64(total) / float64(len(equipe.Scores))
+	equipe.ScoreMoyen = (float64(total) / float64(len(equipe.Scores)))*2
 }
 
 // Fonction pour calculer le plus grand score d'une équipe
@@ -80,10 +80,10 @@ func main() {
 	calculerPlusGrand(&equipeB)
 
 	// Afficher les résultats
-	fmt.Printf("Les deux équipes\tScore du match 1\tScore du match 2\tScore du match 3\tScore du match 4\tScore du match 5\tTOTAL\n")
+	fmt.Printf("Les deux équipes\tScore match 1\tScore match 2\tScore match 3\tScore match 4\tScore match 5\tTOTAL\n")
 	fmt.Printf("%s\t%d\t%d\t%d\t%d\t%d\t%d\n", equipeA.Nom, equipeA.Scores[0], equipeA.Scores[1], equipeA.Scores[2], equipeA.Scores[3], equipeA.Scores[4], equipeA.PlusFaible+equipeB.PlusFaible)
 	fmt.Printf("%s\t%d\t%d\t%d\t%d\t%d\t%d\n", equipeB.Nom, equipeB.Scores[0], equipeB.Scores[1], equipeB.Scores[2], equipeB.Scores[3], equipeB.Scores[4], equipeA.PlusFaible+equipeB.PlusFaible)
-	fmt.Printf("TOTAL\t%d\t%d\t%d\t%d\t%d\t%d\n", equipeA.Scores[0], equipeA.Scores[1], equipeA.Scores[2], equipeA.Scores[3], equipeA.Scores[4], equipeA.PlusFaible+equipeB.PlusFaible)
+	fmt.Printf("TOTAL\t\t%d\t%d\t%d\t%d\t%d\t%d\n", equipeA.Scores[0], equipeA.Scores[1], equipeA.Scores[2], equipeA.Scores[3], equipeA.Scores[4], equipeA.PlusFaible+equipeB.PlusFaible)
 
 	fmt.Printf("\n\t\t\t\tSYNTHESE\n")
 	fmt.Printf("Equipes\tPlus faible score\tScore moyen\tPlus grand score\n")
